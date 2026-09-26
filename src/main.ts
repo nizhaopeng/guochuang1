@@ -4,14 +4,16 @@ import { createApp } from 'vue'
 import './fonts.css'
 
 import './style.css'
+// Element Plus 按需样式（替代原来的全量 element-plus/dist/index.css）
+import './element-plus'
+
 import App from './App.vue'
 import router from './router'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
 
 const app = createApp(App)
 
+// 不再 app.use(ElementPlus) 全量注册：各页面已按需显式 import 自己用到的组件，
+// 全量注册会让打包器无法摇掉未使用的组件。
 app.use(router)
-app.use(ElementPlus)
 
 app.mount('#app')

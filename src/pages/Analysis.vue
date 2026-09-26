@@ -2,8 +2,18 @@
 import { ref, computed, onMounted, nextTick, watch } from 'vue'
 import { ElSelect, ElOption, ElButton, ElCard } from 'element-plus'
 import { Play, BarChart3, Cloud } from 'lucide-vue-next'
-import * as echarts from 'echarts'
+// ECharts 按需引入：只打包实际用到的柱状图、词云 + 网格/提示组件。
+// 不要改回 `import * as echarts from 'echarts'`——那是全量入口（约 1MB），
+// 会让首屏多下载大几百 KB。新增图表类型时在这里补进 use() 即可。
+import * as echarts from 'echarts/core'
+import { BarChart } from 'echarts/charts'
+import { GridComponent, TooltipComponent } from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+// echarts-wordcloud 是副作用注册式，内部只依赖 echarts/lib/echarts（核心 + Canvas），
+// 不会把全部图表拉进来
 import 'echarts-wordcloud'
+
+echarts.use([BarChart, GridComponent, TooltipComponent, CanvasRenderer])
 import { dramaTypes } from '@/data/materials'
 import { analysisResults, type AnalysisResult, type Theme } from '@/data/analysisResult'
 import Loading from '@/components/Loading.vue'
@@ -36,7 +46,7 @@ const initWordCloud = () => {
 
   wordCloudInstance = echarts.init(wordCloudChart.value)
 
-  const option: echarts.EChartsOption = {
+  const option: echarts.EChartsCoreOption = {
     tooltip: {},
     series: [
       {
@@ -70,7 +80,7 @@ const initBarChart = () => {
 
   barChartInstance = echarts.init(barChart.value)
 
-  const option: echarts.EChartsOption = {
+  const option: echarts.EChartsCoreOption = {
     tooltip: {
       trigger: 'axis',
       axisPointer: {

@@ -38,6 +38,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # GitHub Pages 不做 SPA 前端路由回退：直接访问 /materials 这类深层路径会 404。
+      # 把 index.html 复制成 404.html 后，未知路径也返回应用本身，交给 vue-router 接管。
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
