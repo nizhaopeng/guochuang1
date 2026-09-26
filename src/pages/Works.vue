@@ -103,7 +103,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-8">
+  <div class="p-4 lg:p-8">
     <Loading v-if="isLoading" text="正在加载作品..." />
     
     <div v-else>

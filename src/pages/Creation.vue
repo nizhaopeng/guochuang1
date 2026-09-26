@@ -182,7 +182,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-8">
+  <div class="p-4 lg:p-8">
     <Loading v-if="isLoading" text="正在加载创编系统..." />
     
     <div v-else>
@@ -203,7 +203,7 @@ onMounted(() => {
               <span class="w-8 h-8 bg-[#C41E3A] text-white rounded-full flex items-center justify-center text-sm">1</span>
               选择剧种
             </h3>
-            <ElSelect v-model="selectedDrama" class="w-64">
+            <ElSelect v-model="selectedDrama" class="w-full sm:w-64">
               <ElOption v-for="drama in dramaTypes" :key="drama" :label="drama" :value="drama" />
             </ElSelect>
           </div>

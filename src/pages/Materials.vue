@@ -112,7 +112,7 @@ setTimeout(() => {
 </script>
 
 <template>
-  <div class="p-8">
+  <div class="p-4 lg:p-8">
     <Loading v-if="isLoading" text="正在加载资料..." />
     
     <div v-else>
@@ -131,7 +131,7 @@ setTimeout(() => {
             <ElInput
               v-model="searchKeyword"
               placeholder="按标题搜索"
-              class="w-64"
+              class="w-full sm:w-64"
               clearable
             />
           </div>

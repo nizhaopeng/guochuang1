@@ -128,7 +128,7 @@ const statCards = [
 </script>
 
 <template>
-  <div class="p-8">
+  <div class="p-4 lg:p-8">
     <Loading v-if="isLoading" text="正在加载数据..." />
     
     <div v-else class="space-y-8">
@@ -142,7 +142,7 @@ const statCards = [
         </div>
         
         <div class="relative z-10">
-          <h1 class="text-3xl font-bold mb-4">数字化新编智能系统</h1>
+          <h1 class="text-2xl lg:text-3xl font-bold mb-4">数字化新编智能系统</h1>
           <p class="text-xl text-gray-300 mb-2">赋能题材创编</p>
           <p class="text-gray-400 max-w-2xl">
             整合多源资料，智能分析提取，辅助稀有剧种新剧本创编。
@@ -151,7 +151,7 @@ const statCards = [
         </div>
       </div>
       
-      <div class="grid grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
         <div
           v-for="(card, index) in statCards"
           :key="card.title"
@@ -176,7 +176,7 @@ const statCards = [
           <TrendingUp class="w-5 h-5 text-[#C41E3A]" />
           系统概览
         </h2>
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
             <h3 class="text-sm font-medium text-gray-600 mb-3">资料类型分布</h3>
             <div class="space-y-2">
@@ -221,7 +221,7 @@ const statCards = [
       
       <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
         <h2 class="text-lg font-bold text-[#1A1A1A] mb-4">快速导航</h2>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <button
             @click="$router.push('/materials')"
             class="bg-gray-50 hover:bg-[#C41E3A] hover:text-white rounded-lg p-4 transition-all duration-300 text-left group"
@@ -286,7 +286,7 @@ const statCards = [
           </button>
         </div>
         
-        <div class="grid grid-cols-2 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <QRCodeComponent :url="customUrl" :size="200" />
           </div>
@@ -304,7 +304,7 @@ const statCards = [
                   <input
                     v-model="customUrl"
                     type="text"
-                    class="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#C41E3A] focus:border-transparent"
+                    class="flex-1 min-w-0 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#C41E3A] focus:border-transparent"
                     :placeholder="currentMode === 'lan' ? '局域网地址，如 http://192.168.1.100:5173' : '公网地址，如 https://xxx.loca.lt'"
                   />
                   <button

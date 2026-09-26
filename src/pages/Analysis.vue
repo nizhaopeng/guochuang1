@@ -160,7 +160,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-8">
+  <div class="p-4 lg:p-8">
     <Loading v-if="isLoading" text="正在加载分析数据..." />
     
     <div v-else>
@@ -169,7 +169,7 @@ onMounted(() => {
       </div>
       
       <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 mb-6">
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
           <span class="text-gray-600">选择剧种：</span>
           <ElSelect v-model="selectedDrama" class="w-40">
             <ElOption v-for="drama in dramaTypes" :key="drama" :label="drama" :value="drama" />
@@ -186,7 +186,7 @@ onMounted(() => {
       </div>
       
       <div v-else-if="currentAnalysis" class="space-y-6">
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ElCard shadow="hover" class="border-gray-100">
             <template #header>
               <div class="flex items-center gap-2">
@@ -212,7 +212,7 @@ onMounted(() => {
           <template #header>
             <span class="font-bold text-[#1A1A1A]">主题分析结果</span>
           </template>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div
               v-for="theme in themes"
               :key="theme.themeName"
