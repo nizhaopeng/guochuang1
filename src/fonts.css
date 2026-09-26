@@ -1,0 +1,59 @@
+/* 本地自托管中文字体（Noto Sans SC / Noto Serif SC）
+ *
+ * 这些文件是从 fontsource 的完整简体中文全字库中「按项目实际用到的字符」
+ * 子集化生成的，每个字重只保留约 1600 个字形，因此体积很小（合计约 1MB），
+ * 页面首次加载时一次请求即可拿全，不依赖 fonts.googleapis.com。
+ *
+ * ⚠️ 如果你改了界面文案、新增了中文字符，请重新生成字体子集：
+ *      npm run fonts:subset
+ *   否则新出现的字会回退到系统字体，字形和其余文字不一致。
+ *   详见 scripts/subset-fonts.py
+ */
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/noto-sans-sc-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./assets/fonts/noto-sans-sc-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./assets/fonts/noto-sans-sc-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/noto-sans-sc-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Serif SC';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./assets/fonts/noto-serif-sc-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Serif SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/noto-serif-sc-700.woff2') format('woff2');
+}

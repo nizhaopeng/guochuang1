@@ -1,0 +1,111 @@
+/* 字体由 @fontsource 本地自托管，见 src/main.ts。
+   不依赖 fonts.googleapis.com，断网/内网环境也能正常显示。 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #C41E3A;
+  --color-primary-dark: #8B0000;
+  --color-secondary: #6B7B8A;
+  --color-accent: #D4AF37;
+  --color-background: #F5F5DC;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-light: #6B7B8A;
+  --color-border: #E5E5E5;
+  
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+}
+
+.el-button--primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+}
+
+.el-card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+}
+
+.el-card__header {
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+.el-table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.el-table th {
+  background-color: #F9F9F9;
+  font-weight: 600;
+}
+
+.el-table tr:hover > td {
+  background-color: #FAFAFA;
+}
+
+.el-select .el-input__wrapper {
+  border-radius: 0.5rem;
+}
+
+.el-input__wrapper {
+  border-radius: 0.5rem;
+}
+
+.el-dialog {
+  border-radius: 1rem;
+}
+
+.el-dialog__header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.el-form-item__label {
+  font-weight: 500;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C1C1C1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A8A8;
+}

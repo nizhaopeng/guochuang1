@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vite
+
+# 本地工具配置
+.claude/
+
+# 软著申请材料：含申请人与著作权人信息，仅提交版权局，不进公开仓库
+软著申请材料/
+
+# 字体子集化脚本的中间产物
+.charset.txt
